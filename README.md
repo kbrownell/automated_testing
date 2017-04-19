@@ -55,6 +55,12 @@ We I liked TravisCI
 2. Prints out defaults
 3. Free for open source projects
 
+Novice mistakes:
+
+1. Not testing the origination branch of a pull request.
+2. Not running all tests for a module or product.  It still passes, but isn't testing all that we wanted it to test.
+3. Not setting up a local copy of the CI tool right away.  If you're troubleshooting runserver, no point in waiting for an entire site to build each time you want to try something new.
+
 If we did less, we'd have
 ---
 1. Written fewer Behat tests.
