@@ -7,7 +7,7 @@ Lessons learned automating Drupal 7 tests with Behat and TravisCI
 
 Why we chose to automate the running of our tests
 ---
-1. [Is It Worth the Time?](https://xkcd.com/1205/) It was, we were at about 6hrs/week.
+1. [Is It Worth the Time?](https://xkcd.com/1205/) It was, we were at about 6hrs/week (and it took about 2 months of billiable time).
 2. We had a growing team.
 3. Impressive suite of behat tests (first phase of automating tests; before my time).
 4. Increasing nervousness over the potential for problems and opportunities for human error.
@@ -16,21 +16,21 @@ Why we chose to automate the running of our tests
 
 Constraints
 ---
-Had to:
+### Had to:
 
 1. Be free and we didn't want to host the CI application.
 2. Integrate with GitHub.
 4. Build our products.
 5. Work with existing tests.
 
-Testing priorities from clients:
+### Testing priorities from clients:
 
 1. Site looks professional.
 2. Data is accurate and complete.
 3. Layout and organization are as planned.
 4. Site functions (for admins and editors) as expected.
 
-Priorities from our team:
+### Priorities from our team:
 
 1. Reduce the time between development (or security announcement) and deployment.
 2. Reduce the amount of code changes tested at once, so that we can find and fix bugs more quickly.
@@ -39,18 +39,18 @@ Priorities from our team:
 
 Current Toolchain
 ---
-Module Development: Local > GitHub Pull Request > CodeClimate > Travis/Behat
+**Module Development:** Local > GitHub Pull Request > CodeClimate > Travis/Behat
 
-Profile Version Upgrades: [Update Profiles](https://github.com/SU-SWS/stanford_upgrade_scripts/tree/master/upgrade_modules) > GitHub Pull Request > CodeClimate > Travis/Behat
+**Profile Version Upgrades:** [Update Profiles](https://github.com/SU-SWS/stanford_upgrade_scripts/tree/master/upgrade_modules) > GitHub Pull Request > CodeClimate > Travis/Behat
 
-Production Code Upgrades: [Copy over code from Profile Builds](https://github.com/SU-SWS/stanford_upgrade_scripts/blob/master/upgrade_modules/includes/upgrade_functions.inc#L136) > Manually Deploy to UAT > Manually Test with Behat > Manually Deploy to Production > Manually Test with Behat
+**Production Code Upgrades:** [Copy over code from Profile Builds](https://github.com/SU-SWS/stanford_upgrade_scripts/blob/master/upgrade_modules/includes/upgrade_functions.inc#L136) > Manually Deploy to UAT > Manually Test with Behat > Manually Deploy to Production > Manually Test with Behat
 
-Why we like Behat:
+### Why we like Behat:
 
 1. Because Behat tests emulate keyboard navigation, they help us test for the accessibilty of our sites.
 2. Widespread adoption by the Drupal community.
 
-We I liked TravisCI:
+### Why I liked TravisCI:
 
 1. Sensible defaults, ie. never had to adjust MySQL max_packet_size, came with Firefox, etc.
 2. Prints out container defaults.
@@ -60,7 +60,7 @@ We I liked TravisCI:
 6. Able to get a local copy up and running pretty quickly.
 7. I was able to find many public repositories using TravisCI with Drupal and Behat, as well as lots of good documentation.
 
-Novice mistakes:
+### Novice mistakes:
 
 1. Not testing the origination branch of a pull request.
 2. Not running all tests for a module or product.  It still passes, but isn't testing all that we wanted it to test.
