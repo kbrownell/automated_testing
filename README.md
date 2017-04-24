@@ -20,8 +20,9 @@ Constraints
 
 1. Be free and we didn't want to host the CI application.
 2. Integrate with GitHub.
-4. Build our products.
-5. Work with existing tests.
+3. Build our products.
+4. Work with existing tests.
+5. Be easy to update scripts across dozens of different repositories.
 
 ### Testing priorities from clients:
 
@@ -36,6 +37,14 @@ Constraints
 2. Reduce the amount of code changes tested at once, so that we can find and fix bugs more quickly.
 3. Reduce the amount of time we spent running tests manually.
 4. Include test results as part of our code review process, without the added burden of manually running tests per pull request.
+5. Shift from "write more tests" to "all tests must pass" and what breaks better feel worth fixing, either in your code or the test.
+
+### Rollout Process
+1. Prototyped build and test on TravisCI.
+2. Incorporated round of developer feedback.
+3. 2-week sprint to clean up tests and add Travis to client's top 10 modules.
+4. Repeated with another client.
+5. Added tests to definition of done for custom work going forward.
 
 Current Toolchain
 ---
@@ -73,6 +82,7 @@ If we did less, we'd have
 2. Run all tests against our most basic product, and not against all of our products.
 3. Added TravisCI to fewer repositories.
 4. Exclude Javascripts tests entirely, which means we wouldn't have needed to setup Selenium and xvfb.
+5. Focused on testing integrations (integrations are an important part of the value we offer).
 
 If we did more, or when we start working on D8
 ---
