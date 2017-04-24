@@ -41,7 +41,7 @@ Current Toolchain
 ---
 **Module Development:** Local > GitHub Pull Request > CodeClimate > Travis/Behat
 
-**Profile Version Upgrades:** [Update Profiles](https://github.com/SU-SWS/stanford_upgrade_scripts/tree/master/upgrade_modules) > GitHub Pull Request > CodeClimate > Travis/Behat
+**Make File Version Upgrades:** [Update Versions in Make Files](https://github.com/SU-SWS/stanford_upgrade_scripts/tree/master/upgrade_modules) > GitHub Pull Request > CodeClimate > Travis/Behat
 
 **Production Code Upgrades:** [Copy over code from Profile Builds](https://github.com/SU-SWS/stanford_upgrade_scripts/blob/master/upgrade_modules/includes/upgrade_functions.inc#L136) > Manually Deploy to UAT > Manually Test with Behat > Manually Deploy to Production > Manually Test with Behat
 
@@ -70,8 +70,9 @@ Current Toolchain
 If we did less, we'd have
 ---
 1. Written fewer Behat tests.
-2. Added TravisCI to fewer repositories.
-3. Exclude Javascripts tests entirely, which means we wouldn't have needed to setup Selenium and xvfb.
+2. Run all tests against our most basic product, and not against all of our products.
+3. Added TravisCI to fewer repositories.
+4. Exclude Javascripts tests entirely, which means we wouldn't have needed to setup Selenium and xvfb.
 
 If we did more, or when we start working on D8
 ---
